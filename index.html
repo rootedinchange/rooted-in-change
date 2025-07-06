@@ -762,7 +762,7 @@
                 
                 <div class="quiz-result" id="result-creative">
                     <h3>🎨 Fantastic! You're a Creative Changemaker</h3>
-                    <p>You'd be perfect for:</p>
+                    <p>You'd be amazing at:</p>
                     <ul style="text-align: left; margin: 1rem 0; list-style: none; padding-left: 0;">
                         <li>🎭 Art programs for kids</li>
                         <li>🎪 Community theater</li>
@@ -859,7 +859,47 @@
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="#contact" class="btn btn-primary">Become a Partner</a>
+                <button onclick="showPartnerForm()" class="btn btn-primary">Become a Partner</button>
+            </div>
+            
+            <!-- Partner Form Modal -->
+            <div id="partnerFormModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
+                    <h3 style="color: #264653; margin-bottom: 1rem;">Partner with Rooted in Change!</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">Tell us about your organization and we'll connect you with passionate young volunteers.</p>
+                    
+                    <form id="partnerForm" onsubmit="submitPartnerForm(event)">
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Organization Name *</label>
+                            <input type="text" name="orgName" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Contact Email *</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Phone Number *</label>
+                            <input type="tel" name="phone" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Website (optional)</label>
+                            <input type="url" name="website" placeholder="https://yourorganization.org" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Tell us about your organization *</label>
+                            <textarea name="description" required rows="4" placeholder="What does your organization do? What kind of volunteer opportunities do you offer?" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                            <button type="button" onclick="closePartnerForm()" style="padding: 0.75rem 1.5rem; border: 2px solid #264653; background: transparent; color: #264653; border-radius: 25px; cursor: pointer; font-weight: 600;">Cancel</button>
+                            <button type="submit" style="padding: 0.75rem 1.5rem; border: none; background: #6B5CA5; color: white; border-radius: 25px; cursor: pointer; font-weight: 600;">Send Partnership Request</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -872,11 +912,11 @@
                 </div>
                 <div class="about-text">
                     <h3>Meet Our Founder</h3>
-                    <h4>Natalie Kasten - Miss Missouri Earth 2025, Author</h4>
+                    <h4>Natalie Kasten - Miss Missouri Earth 2025, Author, Founder of Rooted in Change & Co-Founder of Youth Empowered Service Team</h4>
                     <p>As Miss Missouri Earth 2025, author of "The Roots That Changed the World," future elementary educator, model, dancer, and college student, I've witnessed firsthand the incredible impact young people can have when connected with meaningful volunteer opportunities.</p>
                     <p>Through my work in youth leadership, community service, and children's literature, I've seen a troubling trend: while community needs continue to grow, the volunteer base is rapidly aging. That's why I created Rooted in Change – to bridge this critical gap by connecting passionate young people with causes they care about.</p>
                     <p>My mission is simple: to ensure that the next generation of volunteers is engaged, empowered, and equipped to lead positive change in their communities. Whether through my children's book inspiring young readers or through direct community action, I believe in planting seeds of change that will grow for generations.</p>
-                    <a href="#contact" class="btn btn-primary">Connect with Me</a>
+                    <a href="mailto:info@rootedinchange.org?subject=Connect%20with%20Natalie&body=Hi%20Natalie,%0A%0AI'd%20love%20to%20connect%20about%20Rooted%20in%20Change!%0A%0A" class="btn btn-primary">Connect with Me</a>
                 </div>
             </div>
         </div>
@@ -927,24 +967,26 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Ready to get involved? We'd love to hear from you!</p>
-                    <p>Email: info@rootedinchange.org</p>
-                    <p>Phone: (636) 290-5583</p>
+                    <h3>🌟 Ready to Make a Difference?</h3>
+                    <p>Let's create change together! Reach out and join our growing community.</p>
+                    <p>✉️ <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20get%20involved!&body=Hi%20there!%0A%0AI'm%20interested%20in%20getting%20involved%20with%20Rooted%20in%20Change.%0A%0A">info@rootedinchange.org</a></p>
+                    <p>📞 <a href="tel:+16362905583">(636) 290-5583</a></p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">💡 Click email or phone to connect instantly!</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <p><a href="#youth">For Youth Volunteers</a></p>
-                    <p><a href="#organizations">For Organizations</a></p>
-                    <p><a href="#about">About Our Founder</a></p>
-                    <p><a href="#impact">Our Impact</a></p>
+                    <h3>🚀 Quick Links</h3>
+                    <p><a href="#youth">🌱 For Youth Volunteers</a></p>
+                    <p><a href="#organizations">🤝 For Organizations</a></p>
+                    <p><a href="#about">👑 About Our Founder</a></p>
+                    <p><a href="#impact">📊 Our Impact</a></p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Our Mission</h3>
+                    <h3>💫 Our Mission</h3>
                     <p>Connecting passionate young people with meaningful volunteer opportunities to create sustainable community impact.</p>
-                    <p>Author of "The Roots That Changed the World"</p>
+                    <p style="margin-top: 1rem;">📖 <strong>Author of "The Roots That Changed the World"</strong></p>
+                    <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Planting seeds of change, one volunteer at a time! 🌱</p>
                 </div>
             </div>
             
@@ -955,6 +997,71 @@
     </footer>
 
     <script>
+        // Partner form functionality
+        function showPartnerForm() {
+            const modal = document.getElementById('partnerFormModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closePartnerForm() {
+            const modal = document.getElementById('partnerFormModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        }
+
+        function submitPartnerForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const orgName = formData.get('orgName');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const website = formData.get('website');
+            const description = formData.get('description');
+            
+            // Create email content
+            const subject = `Partnership Request from ${orgName}`;
+            const body = `Hi Natalie!
+
+We'd love to partner with Rooted in Change to connect with passionate young volunteers.
+
+Organization: ${orgName}
+Contact Email: ${email}
+Phone: ${phone}
+Website: ${website || 'Not provided'}
+
+About our organization:
+${description}
+
+We're excited to work together to engage youth volunteers!
+
+Best regards,
+${orgName} Team`;
+
+            // Create mailto link
+            const mailtoLink = `mailto:info@rootedinchange.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Close form and show success message
+            closePartnerForm();
+            alert('Opening your email client! Thank you for your interest in partnering with us. 🌟');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('partnerFormModal');
+            if (event.target === modal) {
+                closePartnerForm();
+            }
+        });
+
         // Quiz functionality
         function selectOption(element, result) {
             // Remove active class from all options
