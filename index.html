@@ -34,7 +34,6 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
         }
 
         nav {
@@ -67,21 +66,11 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
             font-weight: 500;
         }
 
         .nav-links a:hover {
             color: #6B5CA5;
-        }
-
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
         }
 
         /* Hero Section */
@@ -92,23 +81,6 @@
             display: flex;
             align-items: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="500" cy="500" r="200" fill="rgba(255,255,255,0.05)"/></svg>') center/cover;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
         }
 
         .hero-content {
@@ -123,15 +95,12 @@
         .hero-text h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: slideInFromLeft 1s ease-out;
             line-height: 1.2;
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: slideInFromRight 1s ease-out 0.3s both;
             font-weight: 500;
         }
 
@@ -141,7 +110,6 @@
             border-radius: 15px;
             margin: 2rem 0;
             backdrop-filter: blur(10px);
-            animation: slideInFromBottom 1s ease-out 0.6s both;
             border: 1px solid rgba(255,255,255,0.3);
         }
 
@@ -156,7 +124,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: slideInFromRight 1s ease-out 0.9s both;
         }
 
         .hero-logo {
@@ -171,7 +138,6 @@
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
-            animation: slideInFromBottom 1s ease-out 0.9s both;
         }
 
         .btn {
@@ -291,21 +257,6 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
-        .quiz-question {
-            display: none;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        .quiz-question.active {
-            display: block;
-        }
-
-        .quiz-question h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: white;
-        }
-
         .quiz-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -344,60 +295,6 @@
 
         .quiz-result.show {
             display: block;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        /* Volunteer Spotlights */
-        .spotlights-section {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .spotlight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .spotlight-card {
-            background: #F8F9FA;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border-top: 4px solid #2A9D8F;
-        }
-
-        .spotlight-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .spotlight-image {
-            height: 200px;
-            background: linear-gradient(135deg, #2A9D8F, #6B5CA5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-        }
-
-        .spotlight-content {
-            padding: 1.5rem;
-        }
-
-        .spotlight-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #264653;
-            margin-bottom: 0.5rem;
-        }
-
-        .spotlight-role {
-            color: #6B5CA5;
-            font-weight: 600;
-            margin-bottom: 1rem;
         }
 
         /* Organizations Section */
@@ -559,49 +456,8 @@
             color: #F8F9FA;
         }
 
-        /* Animations */
-        @keyframes slideInFromLeft {
-            0% { transform: translateX(-100%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes slideInFromRight {
-            0% { transform: translateX(100%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes slideInFromBottom {
-            0% { transform: translateY(100%); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #264653;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -609,15 +465,6 @@
             
             .hero-text h1 {
                 font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
             }
             
             .about-content {
@@ -650,7 +497,6 @@
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
@@ -714,22 +560,22 @@
                     <p>Take our quick quiz to discover volunteer opportunities that match your passions!</p>
                 </div>
                 
-                <div class="quiz-question active" id="question1">
+                <div id="question1">
                     <h3>What sounds most appealing to you?</h3>
                     <div class="quiz-options">
-                        <div class="quiz-option" onclick="selectOption(this, 'animals')">
+                        <div class="quiz-option" onclick="showResult('animals')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">🐾</div>
                             <p>Working with animals or in nature</p>
                         </div>
-                        <div class="quiz-option" onclick="selectOption(this, 'people')">
+                        <div class="quiz-option" onclick="showResult('people')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">💝</div>
                             <p>Helping people directly</p>
                         </div>
-                        <div class="quiz-option" onclick="selectOption(this, 'creative')">
+                        <div class="quiz-option" onclick="showResult('creative')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
                             <p>Creative and artistic projects</p>
                         </div>
-                        <div class="quiz-option" onclick="selectOption(this, 'active')">
+                        <div class="quiz-option" onclick="showResult('active')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚽</div>
                             <p>Sports and active pursuits</p>
                         </div>
@@ -745,7 +591,7 @@
                         <li>🌱 Community gardens</li>
                         <li>🌊 Environmental clean-up projects</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20with%20animals%20and%20nature!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20animal%20and%20nature%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
                 </div>
                 
                 <div class="quiz-result" id="result-people">
@@ -757,7 +603,7 @@
                         <li>🍽️ Food banks and soup kitchens</li>
                         <li>🏠 Homeless shelter support</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20helping%20people!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20people-focused%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
                 </div>
                 
                 <div class="quiz-result" id="result-creative">
@@ -769,7 +615,7 @@
                         <li>🖌️ Mural painting projects</li>
                         <li>🎵 Music programs for seniors</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20with%20creative%20projects!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20creative%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
                 </div>
                 
                 <div class="quiz-result" id="result-active">
@@ -781,45 +627,7 @@
                         <li>🚴 Outdoor adventure programs</li>
                         <li>🏋️ Community fitness events</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Connected</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="spotlights-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Young Volunteers Making a Difference</h2>
-                <p>Meet the incredible young people who are already changing their communities</p>
-            </div>
-            
-            <div class="spotlight-grid">
-                <div class="spotlight-card">
-                    <div class="spotlight-image">👩‍🎓</div>
-                    <div class="spotlight-content">
-                        <div class="spotlight-name">Sarah, 16</div>
-                        <div class="spotlight-role">Animal Shelter Volunteer</div>
-                        <p>"I started volunteering at the animal shelter last year and fell in love with helping dogs find their forever homes. I've helped 23 dogs get adopted!"</p>
-                    </div>
-                </div>
-                
-                <div class="spotlight-card">
-                    <div class="spotlight-image">🧑‍🤝‍🧑</div>
-                    <div class="spotlight-content">
-                        <div class="spotlight-name">Marcus, 18</div>
-                        <div class="spotlight-role">Youth Mentor</div>
-                        <p>"Mentoring middle school students has been amazing. Seeing their confidence grow when they master new skills is the best feeling in the world."</p>
-                    </div>
-                </div>
-                
-                <div class="spotlight-card">
-                    <div class="spotlight-image">🎨</div>
-                    <div class="spotlight-content">
-                        <div class="spotlight-name">Emma, 17</div>
-                        <div class="spotlight-role">Community Artist</div>
-                        <p>"I've helped paint 3 murals in our downtown area. It's incredible to see how art can bring a community together and brighten everyone's day."</p>
-                    </div>
+                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20with%20sports%20and%20active%20programs!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20active%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
                 </div>
             </div>
         </div>
@@ -859,47 +667,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <button onclick="showPartnerForm()" class="btn btn-primary">Become a Partner</button>
-            </div>
-            
-            <!-- Partner Form Modal -->
-            <div id="partnerFormModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
-                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
-                    <h3 style="color: #264653; margin-bottom: 1rem;">Partner with Rooted in Change!</h3>
-                    <p style="color: #666; margin-bottom: 2rem;">Tell us about your organization and we'll connect you with passionate young volunteers.</p>
-                    
-                    <form id="partnerForm" onsubmit="submitPartnerForm(event)">
-                        <div style="margin-bottom: 1rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Organization Name *</label>
-                            <input type="text" name="orgName" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Contact Email *</label>
-                            <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Phone Number *</label>
-                            <input type="tel" name="phone" required style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Website (optional)</label>
-                            <input type="url" name="website" placeholder="https://yourorganization.org" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 2rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; color: #264653; font-weight: 600;">Tell us about your organization *</label>
-                            <textarea name="description" required rows="4" placeholder="What does your organization do? What kind of volunteer opportunities do you offer?" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
-                        </div>
-                        
-                        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-                            <button type="button" onclick="closePartnerForm()" style="padding: 0.75rem 1.5rem; border: 2px solid #264653; background: transparent; color: #264653; border-radius: 25px; cursor: pointer; font-weight: 600;">Cancel</button>
-                            <button type="submit" style="padding: 0.75rem 1.5rem; border: none; background: #6B5CA5; color: white; border-radius: 25px; cursor: pointer; font-weight: 600;">Send Partnership Request</button>
-                        </div>
-                    </form>
-                </div>
+                <a href="mailto:info@rootedinchange.org?subject=Partnership%20Request&body=Hi%20Natalie!%0A%0AWe'd%20love%20to%20partner%20with%20Rooted%20in%20Change%20to%20connect%20with%20passionate%20young%20volunteers.%0A%0AOrganization%20Name:%20%0AContact%20Email:%20%0APhone:%20%0AWebsite:%20%0A%0AAbout%20our%20organization:%0A%0A%0AWe're%20excited%20to%20work%20together!%0A%0ABest%20regards" class="btn btn-primary">Become a Partner</a>
             </div>
         </div>
     </section>
@@ -931,32 +699,32 @@
             
             <div class="impact-grid">
                 <div class="impact-metric">
-                    <span class="impact-number" id="hours-count">1,000+</span>
+                    <span class="impact-number">1,000+</span>
                     <p class="impact-label">Volunteer Hours Served</p>
                 </div>
                 
                 <div class="impact-metric">
-                    <span class="impact-number" id="value-count">$24,800+</span>
+                    <span class="impact-number">$24,800+</span>
                     <p class="impact-label">Economic Value Generated</p>
                 </div>
                 
                 <div class="impact-metric">
-                    <span class="impact-number" id="initiatives-count">50+</span>
+                    <span class="impact-number">50+</span>
                     <p class="impact-label">Independent Initiatives</p>
                 </div>
                 
                 <div class="impact-metric">
-                    <span class="impact-number" id="meals-count">1,000+</span>
+                    <span class="impact-number">1,000+</span>
                     <p class="impact-label">Meals Served</p>
                 </div>
                 
                 <div class="impact-metric">
-                    <span class="impact-number" id="care-packs-count">2,100</span>
+                    <span class="impact-number">2,100</span>
                     <p class="impact-label">Care Packs Distributed</p>
                 </div>
                 
                 <div class="impact-metric">
-                    <span class="impact-number" id="cleanup-hours-count">100+</span>
+                    <span class="impact-number">100+</span>
                     <p class="impact-label">Community Clean-up Hours</p>
                 </div>
             </div>
@@ -997,176 +765,25 @@
     </footer>
 
     <script>
-        // Partner form functionality
-        function showPartnerForm() {
-            const modal = document.getElementById('partnerFormModal');
-            if (modal) {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
+        function showResult(type) {
+            // Hide the question
+            document.getElementById('question1').style.display = 'none';
+            
+            // Show the result
+            document.getElementById('result-' + type).classList.add('show');
         }
 
-        function closePartnerForm() {
-            const modal = document.getElementById('partnerFormModal');
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Restore scrolling
-            }
-        }
-
-        function submitPartnerForm(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const orgName = formData.get('orgName');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const website = formData.get('website');
-            const description = formData.get('description');
-            
-            // Create email content
-            const subject = `Partnership Request from ${orgName}`;
-            const body = `Hi Natalie!
-
-We'd love to partner with Rooted in Change to connect with passionate young volunteers.
-
-Organization: ${orgName}
-Contact Email: ${email}
-Phone: ${phone}
-Website: ${website || 'Not provided'}
-
-About our organization:
-${description}
-
-We're excited to work together to engage youth volunteers!
-
-Best regards,
-${orgName} Team`;
-
-            // Create mailto link
-            const mailtoLink = `mailto:info@rootedinchange.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Close form and show success message
-            closePartnerForm();
-            alert('Opening your email client! Thank you for your interest in partnering with us. 🌟');
-        }
-
-        // Close modal when clicking outside
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('partnerFormModal');
-            if (event.target === modal) {
-                closePartnerForm();
-            }
-        });
-
-        // Quiz functionality
-        function selectOption(element, result) {
-            // Remove active class from all options
-            const options = document.querySelectorAll('.quiz-option');
-            options.forEach(option => option.classList.remove('selected'));
-            
-            // Add active class to selected option
-            element.classList.add('selected');
-            
-            // Hide question after a short delay
-            setTimeout(() => {
-                document.getElementById('question1').style.display = 'none';
-                document.getElementById('result-' + result).classList.add('show');
-            }, 500);
-        }
-
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth'
                     });
                 }
-                
-                // Close mobile menu if open
-                const navLinks = document.querySelector('.nav-links');
-                navLinks.classList.remove('active');
             });
-        });
-
-        // Animate impact numbers on scroll
-        function animateNumbers() {
-            const numbers = [
-                { element: 'hours-count', target: 1000, suffix: '+' },
-                { element: 'value-count', target: 24800, prefix: ', suffix: '+' },
-                { element: 'initiatives-count', target: 50, suffix: '+' },
-                { element: 'meals-count', target: 1000, suffix: '+' },
-                { element: 'care-packs-count', target: 2100, suffix: '' },
-                { element: 'cleanup-hours-count', target: 100, suffix: '+' }
-            ];
-
-            numbers.forEach(num => {
-                const element = document.getElementById(num.element);
-                if (element) {
-                    const target = num.target;
-                    let current = 0;
-                    const increment = target / 50;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        const displayValue = (num.prefix || '') + Math.floor(current).toLocaleString() + (num.suffix || '');
-                        element.textContent = displayValue;
-                    }, 30);
-                }
-            });
-        }
-
-        // Trigger number animation when impact section is visible
-        const impactSection = document.getElementById('impact');
-        if (impactSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateNumbers();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-            observer.observe(impactSection);
-        }
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(38, 70, 83, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #2A9D8F 0%, #264653 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('nav');
-            const navLinks = document.querySelector('.nav-links');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            if (!nav.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
         });
     </script>
 </body>
