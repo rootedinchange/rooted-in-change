@@ -24,7 +24,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
             color: white;
@@ -73,7 +72,6 @@
             color: #6B5CA5;
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #2A9D8F 0%, #6B5CA5 100%);
             color: white;
@@ -175,7 +173,6 @@
             color: #2A9D8F;
         }
 
-        /* Stats Section */
         .stats-section {
             background: #F8F9FA;
             padding: 5rem 0;
@@ -234,7 +231,6 @@
             font-weight: 500;
         }
 
-        /* Quiz Section */
         .quiz-section {
             padding: 5rem 0;
             background: linear-gradient(135deg, #6B5CA5 0%, #2A9D8F 100%);
@@ -279,11 +275,6 @@
             transform: translateY(-2px);
         }
 
-        .quiz-option.selected {
-            border-color: #F8F9FA;
-            background: rgba(255,255,255,0.3);
-        }
-
         .quiz-result {
             display: none;
             background: rgba(255,255,255,0.15);
@@ -297,7 +288,6 @@
             display: block;
         }
 
-        /* Organizations Section */
         .organizations-section {
             padding: 5rem 0;
             background: #F8F9FA;
@@ -335,7 +325,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Impact Dashboard */
         .impact-section {
             padding: 5rem 0;
             background: #264653;
@@ -369,7 +358,6 @@
             font-size: 1.1rem;
         }
 
-        /* About Section */
         .about-section {
             padding: 5rem 0;
             background: white;
@@ -419,7 +407,6 @@
             font-size: 1.1rem;
         }
 
-        /* Footer */
         footer {
             background: #264653;
             color: white;
@@ -456,7 +443,6 @@
             color: #F8F9FA;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -560,29 +546,29 @@
                     <p>Take our quick quiz to discover volunteer opportunities that match your passions!</p>
                 </div>
                 
-                <div id="question1">
+                <div id="quiz-question">
                     <h3>What sounds most appealing to you?</h3>
                     <div class="quiz-options">
-                        <div class="quiz-option" onclick="showResult('animals')">
+                        <div class="quiz-option" onclick="showQuizResult('animals')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">🐾</div>
                             <p>Working with animals or in nature</p>
                         </div>
-                        <div class="quiz-option" onclick="showResult('people')">
+                        <div class="quiz-option" onclick="showQuizResult('people')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">💝</div>
                             <p>Helping people directly</p>
                         </div>
-                        <div class="quiz-option" onclick="showResult('creative')">
+                        <div class="quiz-option" onclick="showQuizResult('creative')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
                             <p>Creative and artistic projects</p>
                         </div>
-                        <div class="quiz-option" onclick="showResult('active')">
+                        <div class="quiz-option" onclick="showQuizResult('active')">
                             <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚽</div>
                             <p>Sports and active pursuits</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="quiz-result" id="result-animals">
+                <div class="quiz-result" id="quiz-result-animals">
                     <h3>🌿 Perfect! You're a Nature & Animal Lover</h3>
                     <p>You'd be amazing at:</p>
                     <ul style="text-align: left; margin: 1rem 0; list-style: none; padding-left: 0;">
@@ -591,10 +577,10 @@
                         <li>🌱 Community gardens</li>
                         <li>🌊 Environmental clean-up projects</li>
                     </ul>
-                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20with%20animals%20and%20nature!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20animal%20and%20nature%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I want to volunteer with animals and nature!&body=Hi! I took your quiz and I'm interested in animal and nature volunteering opportunities. Please connect me with organizations that need help!" class="btn btn-primary">Get Connected</a>
                 </div>
                 
-                <div class="quiz-result" id="result-people">
+                <div class="quiz-result" id="quiz-result-people">
                     <h3>💝 Amazing! You're a Natural Helper</h3>
                     <p>You'd be perfect for:</p>
                     <ul style="text-align: left; margin: 1rem 0; list-style: none; padding-left: 0;">
@@ -603,10 +589,10 @@
                         <li>🍽️ Food banks and soup kitchens</li>
                         <li>🏠 Homeless shelter support</li>
                     </ul>
-                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20helping%20people!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20people-focused%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I want to volunteer helping people!&body=Hi! I took your quiz and I'm interested in people-focused volunteering opportunities. Please connect me with organizations that need help!" class="btn btn-primary">Get Connected</a>
                 </div>
                 
-                <div class="quiz-result" id="result-creative">
+                <div class="quiz-result" id="quiz-result-creative">
                     <h3>🎨 Fantastic! You're a Creative Changemaker</h3>
                     <p>You'd be amazing at:</p>
                     <ul style="text-align: left; margin: 1rem 0; list-style: none; padding-left: 0;">
@@ -615,10 +601,10 @@
                         <li>🖌️ Mural painting projects</li>
                         <li>🎵 Music programs for seniors</li>
                     </ul>
-                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20with%20creative%20projects!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20creative%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I want to volunteer with creative projects!&body=Hi! I took your quiz and I'm interested in creative volunteering opportunities. Please connect me with organizations that need help!" class="btn btn-primary">Get Connected</a>
                 </div>
                 
-                <div class="quiz-result" id="result-active">
+                <div class="quiz-result" id="quiz-result-active">
                     <h3>⚽ Awesome! You're an Active Leader</h3>
                     <p>You'd be great at:</p>
                     <ul style="text-align: left; margin: 1rem 0; list-style: none; padding-left: 0;">
@@ -627,7 +613,7 @@
                         <li>🚴 Outdoor adventure programs</li>
                         <li>🏋️ Community fitness events</li>
                     </ul>
-                    <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20volunteer%20with%20sports%20and%20active%20programs!&body=Hi!%0A%0AI%20took%20your%20quiz%20and%20I'm%20interested%20in%20active%20volunteering%20opportunities.%0A%0APlease%20connect%20me%20with%20organizations%20that%20need%20help!%0A%0AThanks!" class="btn btn-primary">Get Connected</a>
+                    <a href="mailto:info@rootedinchange.org?subject=I want to volunteer with sports and active programs!&body=Hi! I took your quiz and I'm interested in active volunteering opportunities. Please connect me with organizations that need help!" class="btn btn-primary">Get Connected</a>
                 </div>
             </div>
         </div>
@@ -667,7 +653,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="mailto:info@rootedinchange.org?subject=Partnership%20Request&body=Hi%20Natalie!%0A%0AWe'd%20love%20to%20partner%20with%20Rooted%20in%20Change%20to%20connect%20with%20passionate%20young%20volunteers.%0A%0AOrganization%20Name:%20%0AContact%20Email:%20%0APhone:%20%0AWebsite:%20%0A%0AAbout%20our%20organization:%0A%0A%0AWe're%20excited%20to%20work%20together!%0A%0ABest%20regards" class="btn btn-primary">Become a Partner</a>
+                <a href="mailto:info@rootedinchange.org?subject=Partnership Request&body=Hi Natalie! We'd love to partner with Rooted in Change. Organization Name: Contact Email: Phone: Website: About our organization:" class="btn btn-primary">Become a Partner</a>
             </div>
         </div>
     </section>
@@ -684,7 +670,7 @@
                     <p>As Miss Missouri Earth 2025, author of "The Roots That Changed the World," future elementary educator, model, dancer, and college student, I've witnessed firsthand the incredible impact young people can have when connected with meaningful volunteer opportunities.</p>
                     <p>Through my work in youth leadership, community service, and children's literature, I've seen a troubling trend: while community needs continue to grow, the volunteer base is rapidly aging. That's why I created Rooted in Change – to bridge this critical gap by connecting passionate young people with causes they care about.</p>
                     <p>My mission is simple: to ensure that the next generation of volunteers is engaged, empowered, and equipped to lead positive change in their communities. Whether through my children's book inspiring young readers or through direct community action, I believe in planting seeds of change that will grow for generations.</p>
-                    <a href="mailto:info@rootedinchange.org?subject=Connect%20with%20Natalie&body=Hi%20Natalie,%0A%0AI'd%20love%20to%20connect%20about%20Rooted%20in%20Change!%0A%0A" class="btn btn-primary">Connect with Me</a>
+                    <a href="mailto:info@rootedinchange.org?subject=Connect with Natalie&body=Hi Natalie, I'd love to connect about Rooted in Change!" class="btn btn-primary">Connect with Me</a>
                 </div>
             </div>
         </div>
@@ -737,7 +723,7 @@
                 <div class="footer-section">
                     <h3>🌟 Ready to Make a Difference?</h3>
                     <p>Let's create change together! Reach out and join our growing community.</p>
-                    <p>✉️ <a href="mailto:info@rootedinchange.org?subject=I%20want%20to%20get%20involved!&body=Hi%20there!%0A%0AI'm%20interested%20in%20getting%20involved%20with%20Rooted%20in%20Change.%0A%0A">info@rootedinchange.org</a></p>
+                    <p>✉️ <a href="mailto:info@rootedinchange.org?subject=I want to get involved!&body=Hi! I'm interested in getting involved with Rooted in Change.">info@rootedinchange.org</a></p>
                     <p>📞 <a href="tel:+16362905583">(636) 290-5583</a></p>
                     <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">💡 Click email or phone to connect instantly!</p>
                 </div>
@@ -765,23 +751,17 @@
     </footer>
 
     <script>
-        function showResult(type) {
-            // Hide the question
-            document.getElementById('question1').style.display = 'none';
-            
-            // Show the result
-            document.getElementById('result-' + type).classList.add('show');
+        function showQuizResult(type) {
+            document.getElementById('quiz-question').style.display = 'none';
+            document.getElementById('quiz-result-' + type).classList.add('show');
         }
 
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
